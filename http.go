@@ -117,8 +117,10 @@ func (c *Client) MakeRequest(ctx context.Context, method string, pathPart string
 		r = b
 	}
 	if method == "GET" && data != nil {
-		// TODO
-		// pathPart = pathPart + "?" + data.Encode()
+		udata, ok := data.(url.Values)
+		if ok {
+			pathPart = pathPart + "?" + udata.Encode()
+		}
 	}
 	req, err := c.NewRequest(method, "/"+APIVersion+pathPart, r)
 	if err != nil {
