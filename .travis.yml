@@ -1,0 +1,13 @@
+language: go
+go_import_path: github.com/kevinburke/rest
+
+os: linux
+dist: trusty
+
+script:
+  - go vet .
+  - go test -short .
+
+cache:
+  directories:
+    - $HOME/.bzrepos
