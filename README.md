@@ -3,7 +3,7 @@ Package vault is a client around the Vault v1 API.
 Operations center around a Client. Create a client by specifying a base URL,
 a token, and (optionally) a http.Client instance:
 
- client := vault.NewClient("https://localhost:8200", "my-token", nil)
+    client := vault.NewClient("https://localhost:8200", "my-token", nil)
 
 Once you have a client, you can perform various operations.
 
