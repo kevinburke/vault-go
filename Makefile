@@ -31,5 +31,5 @@ AUTHORS.txt: | $(WRITE_MAILMAP)
 authors: AUTHORS.txt
 
 release: race-test | $(BUMP_VERSION) $(DIFFER)
-	differ $(MAKE) authors
+	$(DIFFER) $(MAKE) authors
 	bump_version minor http.go
