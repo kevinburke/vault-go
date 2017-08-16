@@ -24,6 +24,9 @@ func (t *TransitService) Create(ctx context.Context, name string, data map[strin
 }
 
 type Signature struct {
+	// Signature returned by vault. This has the format
+	// "vault:v1:<base64-encoded-signature>". Depending on the key type, the
+	// signature may be more or fewer bytes.
 	Signature string `json:"signature"`
 }
 
